@@ -37,9 +37,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 * Author URI: http://bytekiduniya.com
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl.html
-* Travelify theme, Copyright 2014-2015 http://bytekiduniya.com
-* Travelify WordPress theme is distributed under the terms of the GNU GPL
-* Travelify is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+* Byte Ki Duniya theme, Copyright 2014-2015 http://bytekiduniya.com
+* Byte Ki Duniya WordPress theme is distributed under the terms of the GNU GPL
+* Byte Ki Duniya is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 == Additional Notes ==
 
