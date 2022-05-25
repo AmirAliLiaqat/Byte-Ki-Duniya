@@ -78,4 +78,30 @@ function bkd_adding_portfolio_modals_section() {
 }
 add_action( 'init', 'bkd_adding_portfolio_modals_section' );
 
+/************** Function Adding custom post type for team section **************/
+function bkd_adding_team_section() {
+    $args = array(
+        'label' => 'Our Team',
+        'description' => '',
+        'menu_icon' => 'dashicons-businessman',
+        'menu_position' => 5,
+        'public' => true,
+        'hierarchical' => false,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'show_in_rest' => true,
+		'can_export' => true,
+		'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'taxonomies' => array(),
+		'capability_type' => 'page',
+    );
+
+    register_post_type( 'team', $args );
+}
+add_action( 'init', 'bkd_adding_team_section' );
+
 ?>
