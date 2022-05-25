@@ -183,36 +183,32 @@ get_header();
                 <h2 class="section-heading text-uppercase">Our Team</h2>
             </div><!--text-center-->
             <div class="row">
+                <?php
+                    $our_team = new WP_Query( array(
+                        'post_type' => 'team', 
+                        'posts_per_page' => 6,
+                        'order' => 'ASC'
+                        )
+                    ); 
+                    if($our_team->have_posts()) {
+                        while($our_team->have_posts()) {
+                            $our_team->the_post();
+                ?>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/default.jpg" alt="..." />
-                        <h4>Amir Ali</h4>
-                        <p class="text-muted">Web Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/AmirLiaqat0309"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/mehar.amir.liaqat"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/amir-ali-a98315222/"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <img class="mx-auto rounded-circle" src="" /> -->
+                        <div class="rounded-circle">
+                            <?php echo strip_tags(the_post_thumbnail( 'small' )); ?>
+                        </div><!--rounded-circle-->
+                        <h4><?php the_title(); ?></h4>
+                        <p class="text-muted"><?php echo strip_tags(get_the_excerpt()); ?></p>
+                        <?php the_content(); ?>
                     </div><!--team-member-->
                 </div><!--col-lg-4-->
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/default.jpg" alt="..." />
-                        <h4>Ahmad Ali</h4>
-                        <p class="text-muted">Graphic Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100051554183535"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/ahmad-ali-8626b2228/"><i class="fab fa-linkedin-in"></i></a>
-                    </div><!--team-member-->
-                </div><!--col-lg-4-->
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/default.jpg" alt="..." />
-                        <h4>Ali Raza</h4>
-                        <p class="text-muted">Site Helper</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div><!--team-member-->
-                </div><!--col-lg-4-->
+                <?php 
+                        }
+                    }
+                ?>
             </div><!--row-->
         </div><!--container-->
     </section>
