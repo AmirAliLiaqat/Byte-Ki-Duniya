@@ -88,6 +88,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 }
 
+.rounded-circle > img {
+  border-radius: 50%;
+}
+
 .blog-post {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
