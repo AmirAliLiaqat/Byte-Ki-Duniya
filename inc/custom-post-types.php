@@ -43,7 +43,7 @@ function bkd_adding_portfolio_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -51,5 +51,31 @@ function bkd_adding_portfolio_section() {
     register_post_type( 'portfolio', $args );
 }
 add_action( 'init', 'bkd_adding_portfolio_section' );
+
+/************** Function Adding custom post type for portfolio-modals **************/
+function bkd_adding_portfolio_modals_section() {
+    $args = array(
+        'label' => 'Portfolio Modals',
+        'description' => '',
+        'menu_icon' => 'dashicons-screenoptions',
+        'menu_position' => 5,
+        'public' => true,
+        'hierarchical' => false,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'show_in_rest' => true,
+		'can_export' => true,
+		'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'taxonomies' => array(),
+		'capability_type' => 'page',
+    );
+
+    register_post_type( 'portfolio-modals', $args );
+}
+add_action( 'init', 'bkd_adding_portfolio_modals_section' );
 
 ?>
