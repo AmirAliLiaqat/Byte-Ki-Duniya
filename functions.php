@@ -43,5 +43,6 @@ function bkd_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bkd_enqueue_scripts' );
 
+require_once 'inc/custom-post-types.php';
 
 ?>
