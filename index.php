@@ -253,29 +253,29 @@ get_header();
     </div><!--pb-5-->
 
     <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <?php
+        $all_portfolio_modals = new WP_Query( array(
+            'post_type' => 'portfolio-modals', 
+            'posts_per_page' => 6,
+            'order' => 'ASC'
+            )
+        ); 
+        if($all_portfolio_modals->have_posts()) {
+            while($all_portfolio_modals->have_posts()) {
+                $all_portfolio_modals->the_post();
+    ?>
+    <div class="portfolio-modal modal fade" id="<?php echo strip_tags(get_the_excerpt()); ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="<?php echo THEME_DIR_URL; ?>/assets/img/close-icon.svg" alt="Close" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">ByteBunch Blog</h2>
-                                <p class="item-intro text-muted">This is blogging theme for wordpress .</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        ByteBunch
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Web Development
-                                    </li>
-                                </ul>
+                                <h2 class="text-uppercase"><?php the_title(); ?></h2>
+                                <p class="item-intro text-muted"><?php the_content(); ?></p>
+                                <?php the_post_thumbnail( 'large' ); ?>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-xmark me-1"></i>
                                     Close Project
@@ -287,175 +287,9 @@ get_header();
             </div>
         </div>
     </div><!--portfolio-modal-->
-    <!-- Portfolio item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Trakomatic</h2>
-                                <p class="item-intro text-muted">This project like artificial intelligence system for big areas.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Trakomatic
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Web Development
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--portfolio-modal-->
-    <!-- Portfolio item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Warraich Traders</h2>
-                                <p class="item-intro text-muted">This project for the management of housing scoiety system</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Warraich Traders
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Web Development
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--portfolio-modal-->
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Math Solutions</h2>
-                                <p class="item-intro text-muted">This site is solution of all maths problems.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Math Solutions
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Web Development
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--portfolio-modal-->
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Heathrow</h2>
-                                <p class="item-intro text-muted">This is travel and tour booking site.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Heathrow
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Website Design
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--portfolio-modal-->
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Stripe</h2>
-                                <p class="item-intro text-muted">This site is the collection of photographes.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.png" alt="..." />
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>Client:</strong>
-                                        Stripe
-                                    </li>
-                                    <li>
-                                        <strong>Category:</strong>
-                                        Photography
-                                    </li>
-                                </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Project
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--portfolio-modal-->
+    <?php 
+            }
+        }
+    ?>
 
 <?php get_footer(); ?>
