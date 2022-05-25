@@ -24,30 +24,29 @@ get_header();
                 <h3 class="section-subheading text-muted">Looking to make a mark on the world wide web? Whether you need a new design for a custom built website or a design for a popular CMS platform you'll find the perfect web design with these design services.</h3>
             </div>
             <div class="row text-center">
+                <?php
+                    $all_services = new WP_Query( array(
+                        'post_type' => 'services', 
+                        'posts_per_page' => 3,
+                        'order' => 'ASC'
+                        )
+                    ); 
+                    if($all_services->have_posts()) {
+                        while($all_services->have_posts()) {
+                            $all_services->the_post();
+                ?>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa-brands fa-wordpress fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Wordpress Development</h4>
-                    <p class="text-muted text-center">We takes pride in offering Wordpress CMS development services to a wide range of clients, ranging from large scale industries to small scale enterprises. Our dedicated Wordpress experts are highly experienced in core Wordpress framework, Wordpress website development, Wordpress theme designing and other Wordpress customization services to offer you stairway to your dreams!</p>
+                    <h4 class="my-3"><?php the_title(); ?></h4>
+                    <p class="text-muted text-center"><?php the_content(); ?></p>
                 </div><!--col-lg-4-->
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa-brands fa-php fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="my-3">PHP Development</h4>
-                    <p class="text-muted">The PHP expert team at Byte Ki Duniya are proficient in LAMP developer stack. We provide expert PHP programming services for developing scale-able PHP applications from simple to complex web solutions based on your specific requirements. As expert PHP development company, we work in advanced PHP development services & also PHP frameworks i.e. CodeIgnitor, Laravel.</p>
-                </div><!--col-lg-4-->
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa-solid fa-bezier-curve fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="my-3">Graphic Designing</h4>
-                    <p class="text-muted">Graphic design is the visual, artful representation of a brand’s ideas. Graphic design agencies assist clients with the ideation and creation of outward-facing materials to help capture a company’s vision and draw the attention of potential and current customers. Graphic design services can include packaging and merchandise design, signage, art installations, published materials, logos, and general art direction.</p>
-                </div><!--col-lg-4-->
+                <?php 
+                        }
+                    }
+                ?>
             </div><!--row-->
             <div class="see-more-btn text-center">
                 <a href="http://localhost/byte-ki-duniya/services/" class="btn btn-primary btn-xl text-uppercase">See More</a>
@@ -63,99 +62,38 @@ get_header();
                 <h3 class="section-subheading text-muted">Project to project we have developed, designed, and customized a variety of work. Technology is our specialty, but we always develop our projects based on the needs of our clients. Take a look at our work and see if our experience relates to some of your business goals.</h3>
             </div><!--text-center-->
             <div class="row">
+                <?php
+                    $all_portfolio = new WP_Query( array(
+                        'post_type' => 'portfolio', 
+                        'posts_per_page' => 6,
+                        'order' => 'ASC'
+                        )
+                    ); 
+                    if($all_portfolio->have_posts()) {
+                        while($all_portfolio->have_posts()) {
+                            $all_portfolio->the_post();
+                ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="<?php echo strip_tags(get_the_excerpt()); ?>">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="<?php echo THEME_DIR_URL; ?>/assets/img/portfolio/project-1.png" alt="..." />
+                            <?php the_post_thumbnail( 'medium' ); ?>
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">ByteBunch Blog</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
+                            <div class="portfolio-caption-heading"><?php the_title(); ?></div>
+                            <div class="portfolio-caption-subheading text-muted"><?php the_content(); ?></div>
                         </div><!--portfolio-caption-->
                     </div><!--portfolio-item-->
                 </div><!--col-lg-4-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="assets/img/portfolio/project-2.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Trakomatic</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
-                        </div><!--portfolio-caption-->
-                    </div><!--portfolio-item-->
-                </div><!--col-lg-4-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="assets/img/portfolio/project-3.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Warraich Traders</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
-                        </div><!--portfolio-caption-->
-                    </div><!--portfolio-item-->
-                </div><!--col-lg-4-->
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="assets/img/portfolio/project-4.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Math Solutions</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
-                        </div><!--portfolio-caption-->
-                    </div><!--portfolio-item-->
-                </div><!--col-lg-4-->
-                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                    <!-- Portfolio item 5-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="assets/img/portfolio/project-5.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Heathrow</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
-                        </div><!--portfolio-caption-->
-                    </div><!--portfolio-item-->
-                </div><!--col-lg-4-->
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Portfolio item 6-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><!--portfolio-hover-->
-                            <img class="img-fluid" src="assets/img/portfolio/project-6.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Stripe</div>
-                            <div class="portfolio-caption-subheading text-muted">Web Development</div>
-                        </div><!--portfolio-caption-->
-                    </div><!--portfolio-item-->
-                </div><!--col-lg-4-->
+                <?php 
+                        }
+                    }
+                ?>
             </div><!--row-->
             <div class="see-more-btn text-center">
-                <a href="portfolio.html" class="btn btn-primary btn-xl text-uppercase">See More</a>
+                <a href="http://localhost/byte-ki-duniya/portfolio/" class="btn btn-primary btn-xl text-uppercase">See More</a>
             </div>
         </div><!--container-->
     </section>
