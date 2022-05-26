@@ -43,6 +43,13 @@ function bkd_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bkd_enqueue_scripts' );
 
+/************** Function using for removing excerpt dots **************/
+function bkd_remove_excerpt_dots($content) {
+	return str_replace('[&hellip;]', '...', $content);
+}
+add_filter('the_excerpt', 'bkd_remove_excerpt_dots');
+
 require_once 'inc/custom-post-types.php';
+
 
 ?>
