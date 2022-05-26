@@ -106,62 +106,34 @@ get_header();
                 <h3 class="section-subheading text-muted">Byte Ki Duniya is a professional IT services company specializing in solutions for the web and mobile application development and also graphic designing services provider company. We’re obsessed & passionate web development company with the mission to use the right mix of technologies to come up with the right online solutions for your business.</h3>
             </div><!--text-center-->
             <ul class="timeline">
-                <li>
+                <?php
+                    $all_portfolio = new WP_Query( array(
+                        'post_type' => 'about', 
+                        'posts_per_page' => 6,
+                        'order' => 'ASC'
+                        )
+                    ); 
+                    if($all_portfolio->have_posts()) {
+                        while($all_portfolio->have_posts()) {
+                            $all_portfolio->the_post();
+                ?>
+                <li class="<?php echo strip_tags(get_the_excerpt()); ?>">
                     <div class="timeline-image">
-                        <img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." />
+                        <?php the_post_thumbnail( 'small' ); ?>
                     </div><!--timeline-image-->
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2020-2021</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4><?php the_title(); ?></h4>
                         </div><!--timeline-heading-->
                         <div class="timeline-body">
-                            <p class="text-muted">The owner was looking at the dream of this beautiful company but he had no partner to help him and work together to build this company.</p>
+                            <p class="text-muted"><?php the_content(); ?></p>
                         </div><!--timeline-body-->
                     </div><!--timeline-panel-->
                 </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." />
-                    </div><!--timeline-image-->
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Feburary 2022</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
-                        </div><!--timeline-heading-->
-                        <div class="timeline-body">
-                            <p class="text-muted">Fortunately, he found a good friend and they worked together day and night and helped each other. At last, the owner's dream was fulfilled, and this Byte Ki Duniya company appears with this all strength.</p>
-                        </div><!--timeline-body-->
-                    </div><!--timeline-panel-->
-                </li>
-                <li>
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." />
-                    </div><!--timeline-image-->
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>May 2022</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
-                        </div><!--timeline-heading-->
-                        <div class="timeline-body">
-                            <p class="text-muted"> After a few months, the company started its work and provided many services related to information technology, web development, graphic designing, and many other more.</p>
-                        </div><!--timeline-body-->
-                    </div><!--timeline-panel-->
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." />
-                    </div><!--timeline-image-->
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>July 2022</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
-                        </div><!--timeline-heading-->
-                        <div class="timeline-body">
-                            <p class="text-muted">In July 2022 this company started its second phase of Expansion and providing WordPress development services like theme development and plugins development and many more development services.</p>
-                        </div><!--timeline-body-->
-                    </div><!--timeline-panel-->
-                </li>
+                <?php 
+                        }
+                    }
+                ?>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
