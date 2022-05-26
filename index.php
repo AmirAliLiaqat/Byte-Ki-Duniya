@@ -185,37 +185,20 @@ get_header();
         </div><!--container-->
     </section>
 
-    <!-- Clients-->
-    <div class="pb-5">
+    <!-- Newsletter-->
+    <div class="py-5 bg-dark">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.png"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.png"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.png"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/yahoo.svg"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/mashable.svg"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/smart-company.svg"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/tech-crunch.svg"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/tnw.svg"/>
-                </div><!--col-lg-2-->
-                <div class="col-md-2 col-sm-6 my-3">
-                    <img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/virgin.svg"/>
-                </div><!--col-lg-2-->
+            <div class="row text-center text-white">
+                <h1>Join our newsletter</h1>
+                <p>Subscribe to our newsletter to recieve exclusive offers, latest news and updated.</p>
+                <div class="col-md-12 col-sm-8">
+                    <div class="form-group">
+                        <form action="" method="post">
+                            <input class="form-control w-50 btn-xl d-inline" name="newsletter" id="newsletter" type="text" placeholder="enter your email" required/>
+                            <button type="submit" class="btn btn-primary btn-xl text-uppercase" name="subscribe">Subscribe</button>
+                        </form>
+                    </div><!--form-group-->
+                </div><!--col-lg-8-->
             </div><!--row-->
         </div><!--container-->
     </div><!--pb-5-->
