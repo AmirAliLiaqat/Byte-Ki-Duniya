@@ -88,8 +88,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 }
 
-.rounded-circle > img {
+.rounded-circle > img ,.timeline-image > img {
   border-radius: 50%;
+}
+
+.timeline-image > img {
+  width: 156px;
+  height: 157px;
 }
 
 .blog-post {
@@ -11706,8 +11711,8 @@ header.masthead .masthead-heading {
     padding: 0 20px 20px;
   }
   .timeline > li .timeline-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 205px;
     margin-left: -75px;
   }
   .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
