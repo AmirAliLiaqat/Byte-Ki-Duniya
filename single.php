@@ -12,9 +12,10 @@ get_header();
         <div class="container">
             <div class="text-center mt-5">
                 <?php the_post_thumbnail( 'large' ); ?>
-                <h2 class="section-heading text-uppercase mt-5"><?php the_title(); ?></h2>
+                <h2 class="section-heading mt-5"><?php the_title(); ?></h2>
             </div><!--text-center-->
-            <p><?php the_content(); ?></p>
+            <?php the_content(); ?>
+            <?php require_once 'comments.php'; ?>
         </div><!--container-->
     </section>
 
