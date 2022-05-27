@@ -16,16 +16,16 @@ get_header();
             <div class="blog-container p-4">
                 <?php
                     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                    $all_posts = new WP_Query( array(
+                    $all_blog_posts = new WP_Query( array(
                         'post_type' => 'post', 
                         'posts_per_page' => 5,
                         'order' => 'DSEC',
                         'paged' => $paged,
                         )
                     ); 
-                    if($all_posts->have_posts()) {
-                        while($all_posts->have_posts()) {
-                            $all_posts->the_post();
+                    if($all_blog_posts->have_posts()) {
+                        while($all_blog_posts->have_posts()) {
+                            $all_blog_posts->the_post();
                 ?>
                 <div class="row blog-post mb-5">
                     <div class="col-lg-4 col-sm-6 blog-img">
@@ -35,7 +35,7 @@ get_header();
                         <h3 class="mt-3">
                             <a href="<?php the_permalink(); ?>" class="text-decoration-none"><?php the_title(); ?></a>
                         </h3>
-                            <div class="content mx-3">
+                            <div class="content">
                                 <p>
                                     Written By:  <span class="text-danger"><?php the_author(); ?></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     Published on: May 14, 2022 <?php get_the_date('M j, Y'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,7 +57,7 @@ get_header();
                     <?php 
                         echo paginate_links( array(
                             'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                            'total'        => $all_posts->max_num_pages,
+                            'total'        => $all_blog_posts->max_num_pages,
                             'current'      => max( 1, get_query_var( 'paged' ) ),
                             'format'       => '?paged=%#%',
                             'show_all'     => false,
