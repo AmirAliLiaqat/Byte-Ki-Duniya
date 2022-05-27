@@ -38,7 +38,7 @@ get_header();
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa-brands fa-wordpress fa-stack-1x fa-inverse"></i>
+                        <i class="<?php echo strip_tags(get_the_excerpt()); ?> fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="my-3"><?php the_title(); ?></h4>
                     <p class="text-muted text-center"><?php the_content(); ?></p>
