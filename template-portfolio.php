@@ -18,6 +18,7 @@ get_header();
                 <?php
                     $all_portfolio = new WP_Query( array(
                         'post_type' => 'portfolio',
+                        'posts_per_page' => 10,
                         'order' => 'ASC'
                         )
                     ); 
@@ -51,6 +52,7 @@ get_header();
     <?php
         $all_portfolio_modals = new WP_Query( array(
             'post_type' => 'portfolio-modals', 
+            'posts_per_page' => 10,
             'order' => 'ASC'
             )
         ); 
