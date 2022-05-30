@@ -18,7 +18,7 @@ get_header();
                 <?php
                     $all_services = new WP_Query( array(
                         'post_type' => 'services', 
-                        'posts_per_page' => 10,
+                        'posts_per_page' => 100,
                         'order' => 'ASC'
                         )
                     ); 

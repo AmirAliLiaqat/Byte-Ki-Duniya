@@ -16,15 +16,15 @@ get_header();
             </div><!--text-center-->
             <ul class="timeline">
                 <?php
-                    $all_portfolio = new WP_Query( array(
+                    $all_about = new WP_Query( array(
                         'post_type' => 'about', 
-                        'posts_per_page' => 6,
+                        'posts_per_page' => 100,
                         'order' => 'ASC'
                         )
                     ); 
-                    if($all_portfolio->have_posts()) {
-                        while($all_portfolio->have_posts()) {
-                            $all_portfolio->the_post();
+                    if($all_about->have_posts()) {
+                        while($all_about->have_posts()) {
+                            $all_about->the_post();
                 ?>
                 <li class="<?php echo strip_tags(get_the_excerpt()); ?>">
                     <div class="timeline-image">
