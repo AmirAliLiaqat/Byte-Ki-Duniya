@@ -8,7 +8,7 @@ get_header();
 ?>
 
     <!-- Themes section -->
-    <section class="page-section mt-5" id="portfolio">
+    <section class="page-section mt-5" id="themes">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase mt-5">Themes</h2>
@@ -16,14 +16,15 @@ get_header();
             </div><!--text-center-->
             <div class="row">
                 <?php
-                    $all_portfolio = new WP_Query( array(
-                        'post_type' => 'portfolio',
+                    $all_themes = new WP_Query( array(
+                        'post_type' => 'themes',
+                        'posts_per_page' => 100,
                         'order' => 'ASC'
                         )
                     ); 
-                    if($all_portfolio->have_posts()) {
-                        while($all_portfolio->have_posts()) {
-                            $all_portfolio->the_post();
+                    if($all_themes->have_posts()) {
+                        while($all_themes->have_posts()) {
+                            $all_themes->the_post();
                 ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item">
