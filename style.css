@@ -93,7 +93,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .blog-pagination > .page-numbers, .form-submit > input {
-  color: #fff;
+  color: var(--bs-body-bg);
   background-color: var(--bs-primary);
   border: 1px solid transparent;
   border-color: var(--bs-primary);
@@ -111,7 +111,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .blog-pagination > .page-numbers:hover, .blog-pagination > .page-numbers.current , .form-submit > input:hover {
-  color: #fff;
   background-color: #d9aa00;
   border-color: #cca000;
 }
@@ -142,6 +141,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .sub-menu {
   list-style: none;
   padding-left: 0px;
+  background: var(--bs-body-bg);
+  padding: 10px 0;
   text-align: center;
   display: none;
   position: absolute;
@@ -149,6 +150,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .sub-menu .menu-item {
   margin-right: 0px !important;
+  padding: 0 20px;
+}
+
+.sub-menu .menu-item a {
+  color: #000 !important;
+}
+
+.sub-menu .menu-item a:hover {
+  color: #d9aa00 !important;
 }
 
 .menu-item:hover .sub-menu {
