@@ -17,7 +17,7 @@ function bkd_adding_services_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -43,7 +43,7 @@ function bkd_adding_portfolio_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -69,7 +69,7 @@ function bkd_adding_portfolio_modals_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -95,7 +95,7 @@ function bkd_adding_team_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -121,7 +121,7 @@ function bkd_adding_about_section() {
         'show_in_rest' => true,
 		'can_export' => true,
 		'has_archive' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
 		'capability_type' => 'page',
     );
@@ -129,5 +129,31 @@ function bkd_adding_about_section() {
     register_post_type( 'about', $args );
 }
 add_action( 'init', 'bkd_adding_about_section' );
+
+/************** Function Adding custom post type for themes section **************/
+function bkd_adding_themes_section() {
+    $args = array(
+        'label' => 'Themes',
+        'description' => '',
+        'menu_icon' => 'dashicons-schedule',
+        'menu_position' => 5,
+        'public' => true,
+        'hierarchical' => false,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'show_in_rest' => true,
+		'can_export' => true,
+		'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
+        'taxonomies' => array(),
+		'capability_type' => 'page',
+    );
+
+    register_post_type( 'themes', $args );
+}
+add_action( 'init', 'bkd_adding_themes_section' );
 
 ?>
