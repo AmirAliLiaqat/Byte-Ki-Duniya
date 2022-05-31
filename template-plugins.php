@@ -8,7 +8,7 @@ get_header();
 ?>
 
     <!-- Plugins section -->
-    <section class="page-section mt-5" id="plugins">
+    <section class="page-section mt-5" id="portfolio">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase mt-5">Plugins</h2>
