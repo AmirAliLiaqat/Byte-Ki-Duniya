@@ -156,4 +156,30 @@ function bkd_adding_themes_section() {
 }
 add_action( 'init', 'bkd_adding_themes_section' );
 
+/************** Function Adding custom post type for plugins section **************/
+function bkd_adding_plugins_section() {
+    $args = array(
+        'label' => 'Plugins',
+        'description' => '',
+        'menu_icon' => 'dashicons-plugins-checked',
+        'menu_position' => 5,
+        'public' => true,
+        'hierarchical' => false,
+        'exclude_from_search' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'show_in_rest' => true,
+		'can_export' => true,
+		'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
+        'taxonomies' => array(),
+		'capability_type' => 'page',
+    );
+
+    register_post_type( 'plugins', $args );
+}
+add_action( 'init', 'bkd_adding_plugins_section' );
+
 ?>
