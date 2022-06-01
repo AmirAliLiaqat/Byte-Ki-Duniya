@@ -13,7 +13,7 @@ Kirki::add_field( 'bkd_options', [
     'transport' => 'refresh',
     'output'      => [
         [
-            'element' => '.btn-primary, .svg-inline--fa.fa-stack-2x',
+            'element' => '.btn-primary, .timeline > li .timeline-image, #portfolio .portfolio-item .portfolio-link .portfolio-hover',
         ],
     ],
 ] );
