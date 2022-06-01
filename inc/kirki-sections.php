@@ -56,6 +56,13 @@ Kirki::add_section( 'team_section', array(
     'panel'       => 'homepage_settings',
 ) );
 
+/**************************** Section For Homepage Newsletter Section ****************************/
+Kirki::add_section( 'newsletter_section', array(
+    'title'       => esc_html__( 'Newsletter Section', 'kirki' ),
+    'description' => esc_html__( 'Manage Newsletter Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
 /**************************** Section For Footer Settings ****************************/
 Kirki::add_section( 'footer_settings', array(
     'title'       => esc_html__( 'Footer Layout', 'kirki' ),
