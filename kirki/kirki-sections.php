@@ -6,8 +6,8 @@ Kirki::add_config( 'bkd_options', array(
     'options_type' => 'theme_mod',
 ) );
 
-/**************************** Section For Header Layout ****************************/
-Kirki::add_section( 'header_settings', array(
+/**************************** Panel For Header Settings ****************************/
+Kirki::add_panel( 'header_settings', array(
     'title'       => esc_html__( 'Header Layout', 'kirki' ),
     'description' => esc_html__( 'Manage Header Layout', 'kirki' ),
     'priority'    => 5,
@@ -21,6 +21,14 @@ Kirki::add_panel( 'homepage_settings', array(
     'priority'    => 10,
     'icon'    => 'dashicons-layout',
 ) );
+
+/**************************** Section For Menu Settings ****************************/
+Kirki::add_section( 'menu_settings', array(
+    'title'       => esc_html__( 'Menu', 'kirki' ),
+    'description' => esc_html__( 'Manage Menu Settings', 'kirki' ),
+    'panel'       => 'header_settings',
+) );
+
 
 /**************************** Section For Homepage Layout ****************************/
 Kirki::add_section( 'layout', array(
