@@ -14,11 +14,29 @@ Kirki::add_config( 'bkd_options', array(
     'options_type' => 'theme_mod',
 ) );
 
-Kirki::add_section( 'homepage_settings', array(
+Kirki::add_panel( 'homepage_settings', array(
     'title'       => esc_html__( 'Homepage Layout', 'kirki' ),
     'description' => esc_html__( 'Manage Homepage Layout', 'kirki' ),
     'priority'    => 10,
     'icon'    => 'dashicons-layout',
+) );
+
+Kirki::add_section( 'layout', array(
+    'title'       => esc_html__( 'Layout', 'kirki' ),
+    'description' => esc_html__( 'Manage Complete Home Page', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
+Kirki::add_section( 'masterhead_section', array(
+    'title'       => esc_html__( 'Master Head Section', 'kirki' ),
+    'description' => esc_html__( 'Manage Master Head Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
+Kirki::add_section( 'service_section', array(
+    'title'       => esc_html__( 'Services Section', 'kirki' ),
+    'description' => esc_html__( 'Manage Services Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
 ) );
 
 Kirki::add_section( 'footer_settings', array(
@@ -34,7 +52,7 @@ Kirki::add_field( 'bkd_options', [
     'settings'      => 'button_background_setting',
     'label'           => esc_html__( 'Button Background Control', 'kirki' ),
     'description' => esc_html__( 'Change the all site buttons background color', 'kirki' ),
-    'section'       => 'homepage_settings',
+    'section'       => 'layout',
     'default'       => [
         'background-color'           => '#ffc800',
     ],
@@ -52,7 +70,7 @@ Kirki::add_field( 'bkd_options', [
     'settings'      => 'button_hover_background_setting',
     'label'           => esc_html__( 'Button Hover Color Control', 'kirki' ),
     'description' => esc_html__( 'Change the all site buttons hover color', 'kirki' ),
-    'section'       => 'homepage_settings',
+    'section'       => 'layout',
     'default'       => [
         'background-color'           => '#d9aa00',
     ],
@@ -69,7 +87,7 @@ Kirki::add_field( 'bkd_options', [
     'type'    => 'text',
     'settings' => 'masterhead_div_1_text',
     'label'    => esc_html__( 'Master Head Div 1', 'kirki' ),
-    'section'  => 'homepage_settings',
+    'section'  => 'masterhead_section',
     'default'  => esc_html__( 'Welcome To Byte Ki Duniya', 'kirki' ),
     'priority' => 10,
 ] );
@@ -79,9 +97,18 @@ Kirki::add_field( 'bkd_options', [
     'type'    => 'text',
     'settings' => 'masterhead_div_2_text',
     'label'    => esc_html__( 'Master Head Div 2', 'kirki' ),
-    'section'  => 'homepage_settings',
+    'section'  => 'masterhead_section',
     'default'  => esc_html__( 'It`s Nice To Meet You', 'kirki' ),
     'priority' => 10,
+] );
+
+/**************************** Field For Services Section Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'services_section_text',
+    'label'    => esc_html__( 'Services section text control', 'kirki' ),
+    'section'  => 'service_section',
+    'default'  => esc_html__( 'This is description for services section.', 'kirki' ),
 ] );
 
 /**************************** Field For Footer Copyright Text Control ****************************/
