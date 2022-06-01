@@ -1,5 +1,17 @@
 <?php
 
+add_action( 'init', 'master_function' );
+
+function master_function() {
+    bkd_adding_services_section();
+    bkd_adding_portfolio_section();
+    bkd_adding_portfolio_modals_section();
+    bkd_adding_team_section();
+    bkd_adding_about_section();
+    bkd_adding_themes_section();
+    bkd_adding_plugins_section();
+}
+
 /************** Function Adding custom post type for services **************/
 function bkd_adding_services_section() {
     $args = array(
@@ -24,7 +36,6 @@ function bkd_adding_services_section() {
 
     register_post_type( 'services', $args );
 }
-add_action( 'init', 'bkd_adding_services_section' );
 
 /************** Function Adding custom post type for portfolio **************/
 function bkd_adding_portfolio_section() {
@@ -50,7 +61,6 @@ function bkd_adding_portfolio_section() {
 
     register_post_type( 'portfolio', $args );
 }
-add_action( 'init', 'bkd_adding_portfolio_section' );
 
 /************** Function Adding custom post type for portfolio-modals **************/
 function bkd_adding_portfolio_modals_section() {
@@ -76,7 +86,6 @@ function bkd_adding_portfolio_modals_section() {
 
     register_post_type( 'portfolio-modals', $args );
 }
-add_action( 'init', 'bkd_adding_portfolio_modals_section' );
 
 /************** Function Adding custom post type for team section **************/
 function bkd_adding_team_section() {
@@ -102,7 +111,6 @@ function bkd_adding_team_section() {
 
     register_post_type( 'team', $args );
 }
-add_action( 'init', 'bkd_adding_team_section' );
 
 /************** Function Adding custom post type for about section **************/
 function bkd_adding_about_section() {
@@ -128,7 +136,6 @@ function bkd_adding_about_section() {
 
     register_post_type( 'about', $args );
 }
-add_action( 'init', 'bkd_adding_about_section' );
 
 /************** Function Adding custom post type for themes section **************/
 function bkd_adding_themes_section() {
@@ -154,7 +161,6 @@ function bkd_adding_themes_section() {
 
     register_post_type( 'themes', $args );
 }
-add_action( 'init', 'bkd_adding_themes_section' );
 
 /************** Function Adding custom post type for plugins section **************/
 function bkd_adding_plugins_section() {
@@ -180,6 +186,5 @@ function bkd_adding_plugins_section() {
 
     register_post_type( 'plugins', $args );
 }
-add_action( 'init', 'bkd_adding_plugins_section' );
 
 ?>
