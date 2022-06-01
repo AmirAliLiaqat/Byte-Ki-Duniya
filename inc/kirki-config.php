@@ -39,6 +39,24 @@ Kirki::add_section( 'service_section', array(
     'panel'       => 'homepage_settings',
 ) );
 
+Kirki::add_section( 'portfolio_section', array(
+    'title'       => esc_html__( 'Portfolio Section', 'kirki' ),
+    'description' => esc_html__( 'Manage Portfolio Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
+Kirki::add_section( 'about_section', array(
+    'title'       => esc_html__( 'About Section', 'kirki' ),
+    'description' => esc_html__( 'Manage About Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
+Kirki::add_section( 'team_section', array(
+    'title'       => esc_html__( 'Team Section', 'kirki' ),
+    'description' => esc_html__( 'Manage Team Section Text', 'kirki' ),
+    'panel'       => 'homepage_settings',
+) );
+
 Kirki::add_section( 'footer_settings', array(
     'title'       => esc_html__( 'Footer Layout', 'kirki' ),
     'description' => esc_html__( 'Manage Footer Copyright Text', 'kirki' ),
@@ -109,6 +127,33 @@ Kirki::add_field( 'bkd_options', [
     'label'    => esc_html__( 'Services section text control', 'kirki' ),
     'section'  => 'service_section',
     'default'  => esc_html__( 'This is description for services section.', 'kirki' ),
+] );
+
+/**************************** Field For Portfolio Section Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'portfolio_section_text',
+    'label'    => esc_html__( 'Portfolio section text control', 'kirki' ),
+    'section'  => 'portfolio_section',
+    'default'  => esc_html__( 'This is description for portfolio section.', 'kirki' ),
+] );
+
+/**************************** Field For About Section Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'about_section_text',
+    'label'    => esc_html__( 'About section text control', 'kirki' ),
+    'section'  => 'about_section',
+    'default'  => esc_html__( 'This is description for about section.', 'kirki' ),
+] );
+
+/**************************** Field For Team Section Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'team_section_text',
+    'label'    => esc_html__( 'Team section text control', 'kirki' ),
+    'section'  => 'team_section',
+    'default'  => esc_html__( '', 'kirki' ),
 ] );
 
 /**************************** Field For Footer Copyright Text Control ****************************/
