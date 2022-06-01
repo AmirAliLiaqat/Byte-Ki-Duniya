@@ -64,6 +64,26 @@ Kirki::add_field( 'bkd_options', [
     ],
 ] );
 
+/**************************** Field For Master Head Div 1 Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'masterhead_div_1_text',
+    'label'    => esc_html__( 'Master Head Div 1', 'kirki' ),
+    'section'  => 'homepage_settings',
+    'default'  => esc_html__( 'Welcome To Byte Ki Duniya', 'kirki' ),
+    'priority' => 10,
+] );
+
+/**************************** Field For Master Head Div 2 Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'masterhead_div_2_text',
+    'label'    => esc_html__( 'Master Head Div 2', 'kirki' ),
+    'section'  => 'homepage_settings',
+    'default'  => esc_html__( 'It`s Nice To Meet You', 'kirki' ),
+    'priority' => 10,
+] );
+
 /**************************** Field For Footer Copyright Text Control ****************************/
 Kirki::add_field( 'bkd_options', [
     'type'    => 'text',
