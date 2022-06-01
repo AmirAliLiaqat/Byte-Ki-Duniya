@@ -92,6 +92,24 @@ Kirki::add_field( 'bkd_options', [
     'default'  => esc_html__( '', 'kirki' ),
 ] );
 
+/**************************** Field For Newsletter Heading Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'newsletter_heading',
+    'label'    => esc_html__( 'Newsletter Heading', 'kirki' ),
+    'section'  => 'newsletter_section',
+    'default'  => esc_html__( 'Join our newsletter', 'kirki' ),
+] );
+
+/**************************** Field For Newsletter Paragraph Text Control ****************************/
+Kirki::add_field( 'bkd_options', [
+    'type'    => 'text',
+    'settings' => 'newsletter_paragraph',
+    'label'    => esc_html__( 'Newsletter Paragraph', 'kirki' ),
+    'section'  => 'newsletter_section',
+    'default'  => esc_html__( 'Subscribe to our newsletter to recieve exclusive offers, latest news and updated.', 'kirki' ),
+] );
+
 /**************************** Field For Footer Copyright Text Control ****************************/
 Kirki::add_field( 'bkd_options', [
     'type'    => 'text',
