@@ -30,10 +30,10 @@ get_header();
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Services</h2>
                 <h3 class="section-subheading text-muted">
-                <?php 
-                    echo get_theme_mod( 'services_section_text', 'This is description for services section.' );
-                ?>
-            </h3>
+                    <?php 
+                        echo get_theme_mod( 'services_section_text', 'This is description for services section.' );
+                    ?>
+                </h3>
             </div>
             <div class="row text-center">
                 <?php
