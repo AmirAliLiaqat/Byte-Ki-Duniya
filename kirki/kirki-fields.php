@@ -6,7 +6,7 @@ Kirki::add_field( 'bkd_options', [
     'settings'      => 'header_background_setting',
     'label'           => esc_html__( 'Header Background Control', 'kirki' ),
     'description' => esc_html__( 'Change the all site header background color', 'kirki' ),
-    'section'       => 'header_settings',
+    'section'       => 'menu_settings',
     'default'       => [
         'background-color'           => '#000',
     ],
