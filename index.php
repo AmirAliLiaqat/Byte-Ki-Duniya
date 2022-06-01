@@ -10,8 +10,16 @@ get_header();
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Byte Ki Duniya</div>
-            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <div class="masthead-subheading">
+                <?php 
+                    echo get_theme_mod( 'masterhead_div_1_text', 'Welcome To Byte Ki Duniya' );
+                ?>
+            </div>
+            <div class="masthead-heading text-uppercase">
+                <?php 
+                    echo get_theme_mod( 'masterhead_div_2_text', 'It`s Nice To Meet You' );
+                ?>
+            </div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Read More</a>
         </div><!--container-->
     </header>
