@@ -29,7 +29,11 @@ get_header();
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Services</h2>
-                <h3 class="section-subheading text-muted">Looking to make a mark on the world wide web? Whether you need a new design for a custom built website or a design for a popular CMS platform you'll find the perfect web design with these design services.</h3>
+                <h3 class="section-subheading text-muted">
+                <?php 
+                    echo get_theme_mod( 'services_section_text', 'This is description for services section.' );
+                ?>
+            </h3>
             </div>
             <div class="row text-center">
                 <?php
@@ -67,7 +71,11 @@ get_header();
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Project to project we have developed, designed, and customized a variety of work. Technology is our specialty, but we always develop our projects based on the needs of our clients. Take a look at our work and see if our experience relates to some of your business goals.</h3>
+                <h3 class="section-subheading text-muted">
+                    <?php 
+                        echo get_theme_mod( 'portfolio_section_text', 'This is description for portfolio section.' );
+                    ?>
+                </h3>
             </div><!--text-center-->
             <div class="row">
                 <?php
@@ -111,7 +119,11 @@ get_header();
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">About</h2>
-                <h3 class="section-subheading text-muted">Byte Ki Duniya is a professional IT services company specializing in solutions for the web and mobile application development and also graphic designing services provider company. We’re obsessed & passionate web development company with the mission to use the right mix of technologies to come up with the right online solutions for your business.</h3>
+                <h3 class="section-subheading text-muted">
+                    <?php 
+                        echo get_theme_mod( 'about_section_text', 'This is description for about section.' );
+                    ?>
+                </h3>
             </div><!--text-center-->
             <ul class="timeline">
                 <?php
@@ -161,6 +173,11 @@ get_header();
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Our Team</h2>
+                <h3 class="section-subheading text-muted">
+                    <?php 
+                        echo get_theme_mod( 'team_section_text', '' );
+                    ?>
+                </h3>
             </div><!--text-center-->
             <div class="row">
                 <?php
