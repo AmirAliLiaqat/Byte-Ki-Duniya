@@ -49,7 +49,8 @@ function bkd_remove_excerpt_dots($content) {
 }
 add_filter('the_excerpt', 'bkd_remove_excerpt_dots');
 
-require_once 'inc/custom-post-types.php';
+// require_once 'inc/custom-post-types.php';
+require_once 'inc/kirki-config.php';
 
 
 ?>
