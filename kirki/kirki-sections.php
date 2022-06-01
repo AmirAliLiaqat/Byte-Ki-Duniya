@@ -6,6 +6,14 @@ Kirki::add_config( 'bkd_options', array(
     'options_type' => 'theme_mod',
 ) );
 
+/**************************** Section For Header Layout ****************************/
+Kirki::add_section( 'header_settings', array(
+    'title'       => esc_html__( 'Header Layout', 'kirki' ),
+    'description' => esc_html__( 'Manage Header Layout', 'kirki' ),
+    'priority'    => 5,
+    'icon'    => 'dashicons-admin-tools',
+) );
+
 /**************************** Panel For Homepage settings ****************************/
 Kirki::add_panel( 'homepage_settings', array(
     'title'       => esc_html__( 'Homepage Layout', 'kirki' ),
