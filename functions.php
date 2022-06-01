@@ -20,7 +20,6 @@ add_filter('the_excerpt', 'bkd_remove_excerpt_dots');
 require_once 'inc/enqueue-styles.php';
 require_once 'inc/add-theme-supports.php';
 require_once 'inc/custom-post-types.php';
-require_once 'inc/kirki-config.php';
-
+require_once 'kirki/kirki-config.php';
 
 ?>
