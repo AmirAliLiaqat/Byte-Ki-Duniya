@@ -214,8 +214,16 @@ get_header();
     <div class="py-5 bg-dark">
         <div class="container">
             <div class="row text-center text-white">
-                <h1>Join our newsletter</h1>
-                <p>Subscribe to our newsletter to recieve exclusive offers, latest news and updated.</p>
+                <h1>
+                    <?php 
+                        echo get_theme_mod( 'newsletter_heading', 'Join our newsletter' );
+                    ?>
+                </h1>
+                <p>
+                    <?php 
+                        echo get_theme_mod( 'newsletter_paragraph', 'Subscribe to our newsletter to recieve exclusive offers, latest news and updated.' );
+                    ?>
+                </p>
                 <div class="col-md-12 col-sm-8">
                     <div class="form-group">
                         <form action="" method="post">
