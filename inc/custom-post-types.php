@@ -27,11 +27,11 @@ function bkd_adding_services_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'services', $args );
@@ -52,11 +52,11 @@ function bkd_adding_portfolio_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'portfolio', $args );
@@ -77,11 +77,11 @@ function bkd_adding_portfolio_modals_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'portfolio-modals', $args );
@@ -102,11 +102,11 @@ function bkd_adding_team_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'team', $args );
@@ -127,11 +127,11 @@ function bkd_adding_about_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'about', $args );
@@ -152,11 +152,11 @@ function bkd_adding_themes_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'themes', $args );
@@ -177,11 +177,11 @@ function bkd_adding_plugins_section() {
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
         'show_in_rest' => true,
-		'can_export' => true,
-		'has_archive' => true,
+        'can_export' => true,
+        'has_archive' => true,
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
         'taxonomies' => array(),
-		'capability_type' => 'page',
+        'capability_type' => 'page',
     );
 
     register_post_type( 'plugins', $args );
